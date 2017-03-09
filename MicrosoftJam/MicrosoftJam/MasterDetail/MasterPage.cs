@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicrosoftJam.GamePages.AlexandruP;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
@@ -18,6 +19,13 @@ namespace MicrosoftJam.MasterDetail
                 Title = "Profile",
                 IconSource = "avatar.png",
                 TargetType = typeof(ProfilePage)
+            });
+
+            masterPageItems.Add(new MasterPageItem
+            {
+                Title = "AlexandruP",
+                IconSource = "avatar.png",
+                TargetType = typeof(AlexandruP)
             });
 
             listView = new ListView
