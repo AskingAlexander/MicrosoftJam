@@ -13,9 +13,6 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)GamePages\AlexandruP\AlexandruP.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)MasterDetail\MainPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MasterDetail\MasterPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MasterDetail\MasterPageItem.cs" />
@@ -24,10 +21,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)UtilityClasses\userRelated.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>

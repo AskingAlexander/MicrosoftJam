@@ -21,8 +21,8 @@ namespace MicrosoftJam.GamePages.AlexandruP
             };
 
 
-            var tapGestureRecognizer = new TapGestureRecognizer();
-            tapGestureRecognizer.Tapped += (s, e) =>
+            var imageRec = new TapGestureRecognizer();
+            imageRec.Tapped += (s, e) =>
             {
                 // handle the tap
                 if (theCommand.Text.Equals("Touch the image!"))
@@ -35,7 +35,7 @@ namespace MicrosoftJam.GamePages.AlexandruP
                 }
             };
 
-            mainImage.GestureRecognizers.Add(tapGestureRecognizer);
+            mainImage.GestureRecognizers.Add(imageRec);
 
             Button clickMe = new Button
             {
@@ -57,6 +57,23 @@ namespace MicrosoftJam.GamePages.AlexandruP
                 Text = "Let the games Begin!"
             };
 
+
+            var commandRec = new TapGestureRecognizer();
+            commandRec.Tapped += (s, e) =>
+            {
+                // handle the tap
+                if (theCommand.Text.Equals("Touch the text!"))
+                {
+                    DoOk();
+                }
+                else
+                {
+                    DoWrong();
+                }
+            };
+
+            theCommand.GestureRecognizers.Add(commandRec);
+
             theScore = new Label
             {
                 TextColor = Color.FromHex("00090C"),
@@ -64,6 +81,23 @@ namespace MicrosoftJam.GamePages.AlexandruP
                 VerticalOptions = LayoutOptions.Center,
                 Text = score.ToString()
             };
+
+
+            var scoreRec = new TapGestureRecognizer();
+            scoreRec.Tapped += (s, e) =>
+            {
+                // handle the tap
+                if (theCommand.Text.Equals("Touch the score!"))
+                {
+                    DoOk();
+                }
+                else
+                {
+                    DoWrong();
+                }
+            };
+
+            theScore.GestureRecognizers.Add(scoreRec);
 
             this.Content = new StackLayout
             {
@@ -105,27 +139,46 @@ namespace MicrosoftJam.GamePages.AlexandruP
 
         private ImageSource GetPicture(string imageName, string URL)
         {
-            return Device.OnPlatform(
-                ImageSource.FromUri(new Uri(URL)),
-                ImageSource.FromFile(imageName),
-                ImageSource.FromUri(new Uri(URL)));
+            ImageSource fromFile = ImageSource.FromFile(imageName);
+
+            if (fromFile != null)
+            {
+                return fromFile;
+            }
+
+            return ImageSource.FromUri(new Uri(URL));
         }
 
         private string DoRandomSimon()
         {
-            if (RandoomBoolean())
+            switch (RandomCommand())
             {
-                return "Touch the image!";
-            }
-            else
-            {
-                return "Press the button!";
+
+                case 0:
+                    {
+                        return "Touch the image!";
+                    }
+
+                case 1:
+                    {
+                        return "Press the button!";
+                    }
+
+                case 2:
+                    {
+                        return "Touch the text!";
+                    }
+
+                default:
+                    {
+                        return "Touch the score!";
+                    }
             }
         }
 
-        private bool RandoomBoolean()
+        private int RandomCommand()
         {
-            return (((new Random()).Next(0, 2) % 2) == 0);
+            return ((new Random()).Next(0, 5));
         }
 
         private void IWasClicked(object sender, EventArgs e)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicrosoftJam.MasterDetail;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace MicrosoftJam
 		{
 			InitializeComponent();
 
-			MainPage = new MicrosoftJam.MainPage();
+            MainPage = new MainPage();
 		}
 
 		protected override void OnStart ()
