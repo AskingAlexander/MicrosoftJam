@@ -29,8 +29,10 @@ namespace MicrosoftJam
 
 		protected override void OnStart ()
 		{
-			// Handle when your app starts
-		}
+            // Handle when your app starts
+            ScoreRelated.UpdateScore();
+
+        }
 
 		protected override void OnSleep ()
 		{

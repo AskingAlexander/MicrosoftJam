@@ -56,23 +56,10 @@ namespace MicrosoftJam.MasterDetail
             };
         }
 
-        private void updateData(object sender, EventArgs e)
+        public void updateData(object sender, EventArgs e)
         {
-            if (ScoreRelated.totalScore == 0)
-            {
-                string tempScore = DependencyService.Get<ISaveAndLoad>().LoadText("score.txt"); ;
-
-                if (tempScore.Length > 0)
-                {
-                    ScoreRelated.totalScore = Double.Parse(tempScore);
-                    totalScore.Text = tempScore;
-                }
-            }
-            else
-            {
-                totalScore.Text = ScoreRelated.totalScore.ToString();
-                DependencyService.Get<ISaveAndLoad>().SaveText("score.txt", totalScore.Text);
-            }
+            ScoreRelated.UpdateScore();
+            totalScore.Text = ScoreRelated.totalScore.ToString();
         }
     }
 }
