@@ -28,6 +28,13 @@ namespace MicrosoftJam.MasterDetail
                 TargetType = typeof(AlexandruP)
             });
 
+            masterPageItems.Add(new MasterPageItem
+            {
+                Title = "AlexandruP",
+                IconSource = "avatar.png",
+                TargetType = typeof(AlexandruP)
+            });
+
             listView = new ListView
             {
                 ItemsSource = masterPageItems,
