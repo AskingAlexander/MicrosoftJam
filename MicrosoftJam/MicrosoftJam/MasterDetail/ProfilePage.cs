@@ -58,7 +58,7 @@ namespace MicrosoftJam.MasterDetail
 
         public void updateData(object sender, EventArgs e)
         {
-            ScoreRelated.UpdateScore();
+            //ScoreRelated.UpdateScore();
             totalScore.Text = ScoreRelated.totalScore.ToString();
         }
     }
