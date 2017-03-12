@@ -13,6 +13,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)GamePages\AlexandruP\AlexandruP.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GamePages\AndradaH\AndradaH.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GamePages\VladO\VladO.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MasterDetail\MainPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MasterDetail\MasterPage.cs" />

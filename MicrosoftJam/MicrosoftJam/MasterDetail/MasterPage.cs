@@ -1,4 +1,5 @@
 ﻿using MicrosoftJam.GamePages.AlexandruP;
+using MicrosoftJam.GamePages.AndradaH;
 using MicrosoftJam.GamePages.VladO;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,13 @@ namespace MicrosoftJam.MasterDetail
                 Title = "AlexandruP",
                 IconSource = "avatar.png",
                 TargetType = typeof(AlexandruP)
+            });
+
+            masterPageItems.Add(new MasterPageItem
+            {
+                Title = "AndradaH",
+                IconSource = "avatar.png",
+                TargetType = typeof(AndradaH)
             });
 
             masterPageItems.Add(new MasterPageItem
