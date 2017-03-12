@@ -1,4 +1,5 @@
 ﻿using MicrosoftJam.GamePages.AlexandruP;
+using MicrosoftJam.GamePages.VladO;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -30,9 +31,9 @@ namespace MicrosoftJam.MasterDetail
 
             masterPageItems.Add(new MasterPageItem
             {
-                Title = "AlexandruP",
+                Title = "VladO",
                 IconSource = "avatar.png",
-                TargetType = typeof(AlexandruP)
+                TargetType = typeof(VladO)
             });
 
             listView = new ListView
