@@ -6,7 +6,7 @@ namespace MicrosoftJam.UtilityClasses
 {
     class ScoreRelated
     {
-        public static UInt64 totalScore;
-        public static UInt64[] partialScores;
+        public static double totalScore = 0;
+        public static UInt64[] partialScores = new UInt64[3];
     }
 }

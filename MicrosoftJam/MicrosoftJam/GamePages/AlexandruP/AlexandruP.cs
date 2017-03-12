@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicrosoftJam.UtilityClasses;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
@@ -99,7 +100,7 @@ namespace MicrosoftJam.GamePages.AlexandruP
 
             theScore.GestureRecognizers.Add(scoreRec);
 
-            this.Content = new StackLayout
+            var theStack = new StackLayout
             {
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 Spacing = 20,
@@ -110,10 +111,14 @@ namespace MicrosoftJam.GamePages.AlexandruP
                         theScore
                     }
             };
+
+            this.Content = new ScrollView { Content = theStack };
         }
 
         private void DoWrong()
         {
+            UtilityClasses.ScoreRelated.totalScore += score / 100;
+            DependencyService.Get<ISaveAndLoad>().SaveText("score.txt", ScoreRelated.totalScore.ToString());
             if (score > 0)
             {
                 score = 0;
@@ -133,6 +138,10 @@ namespace MicrosoftJam.GamePages.AlexandruP
                 mainImage.Source = GetPicture("ok.png", "http://i.imgur.com/tsGKc4L.png");
             }
             score++;
+
+            UtilityClasses.ScoreRelated.totalScore += 0.01;
+            UtilityClasses.ScoreRelated.partialScores[0]++;
+
             theScore.Text = score.ToString();
             theCommand.Text = DoRandomSimon();
         }

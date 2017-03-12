@@ -17,8 +17,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)MasterDetail\MasterPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MasterDetail\MasterPageItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MasterDetail\ProfilePage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UtilityClasses\ISaveAndLoad.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UtilityClasses\RegisterPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UtilityClasses\ScoreRelated.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)UtilityClasses\userRelated.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UtilityClasses\UserRelated.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)App.xaml">

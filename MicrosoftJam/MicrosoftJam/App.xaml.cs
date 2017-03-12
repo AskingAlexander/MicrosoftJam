@@ -1,4 +1,5 @@
 ﻿using MicrosoftJam.MasterDetail;
+using MicrosoftJam.UtilityClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,16 @@ namespace MicrosoftJam
 		{
 			InitializeComponent();
 
-            MainPage = new MainPage();
+            ScoreRelated mayNeed = new ScoreRelated();
+
+            if (UtilityClasses.UserRelated.IsLoggedIn())
+            {
+                MainPage = new MainPage();
+            }
+            else
+            {
+                MainPage = new UtilityClasses.RegisterPage();
+            }
 		}
 
 		protected override void OnStart ()
